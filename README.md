@@ -21,26 +21,23 @@ Tự động triển khai các giao diện Kho lưu trữ bao gồm hỗ trợ c
 - Tải xuống và cài đặt IntelliJ IDEA: https://www.jetbrains.com/idea/download/#section=windows
 - [ ] Bước 2: Tạo dự án Spring Initializr
 - Truy cập: https://start.spring.io/
-
-![image](uploads/f5ee71274df7e0b3aa8808c03160c3f5/image.png)
-- Chọn "Dependencies".
-![image](uploads/20ac25a5321ef4dabb088099c5498e93/image.png)
+- Chọn "Dependencies": Spring Web and Spring Data Elasticsearch 
 - Chọn "GENERATE" để tải dự án về máy.
 - Mở dự án trên IntelliJ IDEA.
 - [ ] Bước 3: Kết nối Elasticsearch
-
 Cấu trúc thư mục dự án: 
-![image](uploads/4079734a342fd0dc3d01008753f23c10/image.png)
+![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/81bf0559-aaaf-470a-bbff-53af759db58b)
 - Tạo file config.java
-![image](uploads/d8f9d94bf99f9b8adb138b4d9c9a5b46/image.png)
+![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/e037930c-a24a-4d93-bd45-77a05c7cc423)
 - Tạo file Course.java
-![image](uploads/c4405620cae3d1106aa569104144afd9/image.png)
+![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/acbc3d5b-ef7a-4e58-8fb1-9e6366366125)
 - Tạo file ElasticRep.java
-![image](uploads/b47eba1b1cf1dbef1ed467423f8fc3dd/image.png)
+- ![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/0256e21a-fbfa-4309-a430-2c65c3ee8a80)
 - Tạo file CourseService.java
-![image](uploads/52d27f6ea0d5438adaf4c6d47686e879/image.png)
+![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/19260127-a1d0-4be2-b21d-6d9171635b7e)
+
 - Tạo file CourseController.java
-![image](uploads/f718ed2af8985b68c29facdd58a5b3a1/image.png)
+![image](https://github.com/tuyenminh/SpringBootElasticsearch/assets/101682264/7cca3292-4940-4d00-bce2-ac97cfe4114a)
 - [ ] Bước 4: Run dự án
 Run dự án và dùng các phương thức trên Postman:
 - GET http://localhost:9200/ kiểm tra hoạt động Elasticsearch
