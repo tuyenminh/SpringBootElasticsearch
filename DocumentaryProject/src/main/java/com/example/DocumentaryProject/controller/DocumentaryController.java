@@ -7,7 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -35,4 +37,31 @@ public class DocumentaryController {
         documentaryService.deleteDocs(id);
         return ResponseEntity.ok("Xóa thành công");
     }
+    @PostMapping("")
+    public ResponseEntity<?> createDocs(@RequestBody Documentary documentary) {
+        Documentary createdDocumentary = documentaryService.createDocs(documentary);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdDocumentary);
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateDoc(@PathVariable String id, @RequestBody Documentary updatedDocumentary) {
+        Documentary updatedDoc = documentaryService.updateDoc(id, updatedDocumentary);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(updatedDoc).ok("Cập nhật thành công");
+    }
+    @PostMapping("/upload")
+    public ResponseEntity<String> uploadFile(@RequestParam("file") MultipartFile file) {
+        if (file.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Yêu cầu chọn file");
+        }
+        return ResponseEntity.ok("File được upload thành công!");
+    }
+//    @PostMapping("/import")
+//    public ResponseEntity<String> importData(@RequestParam("csvFilePath") String csvFilePath) {
+//        try {
+//            documentaryService.importDataFromCSV(csvFilePath);
+//            return ResponseEntity.ok("Import thành công");
+//        } catch (IOException e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Lỗi khi import dữ liệu");
+//        }
+//    }
+
 }
